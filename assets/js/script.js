@@ -8,16 +8,16 @@ const emojis = ["🎃","🎈","✨","🎁"];
 let cards = [];
 let flipped = [];
 let matched = [];
-let attempts = [];
+let attempts = 0;
 
 function startGame() {
     cards =[...emojis, ...emojis].sort(() => Math.random() - 0.5);
     flipped = [];
     matched = [];
     attempts = 0;
-    uppdateScore();
+    updateScore();
 
-    let cols =Math.ceil(Math.sqrt(cards.lenght));
+    let cols =Math.ceil(Math.sqrt(cards.length));
     board.style.gridTemplateColumns = `repeat(${cols}, 80px)`;
 
     drawBoard();
@@ -25,7 +25,19 @@ function startGame() {
 }
 
 function drawBoard() {
+    board.innerHTML = "";
+    cards.forEach((symbol, index) => {
+        const div = document.createElement("div");
+        div.classList.add("card");
 
+        if(!flipped.includes(index) && !matched.includes(index)) {
+            div.classList.add("hidden");
+        }
+
+        div.textContent = symbol;
+        div.addEventListener("click", () => flipCard(index));
+        board.appendChild(div);
+    });
 }
 
 function flipCard() {
