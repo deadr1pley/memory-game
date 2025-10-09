@@ -1,5 +1,14 @@
+// Reference to board and score
 const board = document.getElementById("board");
 const scoreDisplay = document.getElementById("score");
+
+// emoji list for cards
+const emojis = ["🎃","🎈","✨","🎁"];
+
+let cards = [];
+let flipped = [];
+let matched = [];
+let attempts = [];
 
 function startGame() {
 
