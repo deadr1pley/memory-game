@@ -18,5 +18,17 @@ function CheckMatch() {
 }
 
 function updateScore() {
-    
+
 }
+
+// function restartGame() {
+
+// }
+
+// function setDifficulty() {
+
+// }
+
+// function chooseTheme() {
+
+// }
