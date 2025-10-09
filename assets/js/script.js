@@ -11,6 +11,16 @@ let matched = [];
 let attempts = [];
 
 function startGame() {
+    cards =[...emojis, ...emojis].sort(() => Math.random() - 0.5);
+    flipped = [];
+    matched = [];
+    attempts = 0;
+    uppdateScore();
+
+    let cols =Math.ceil(Math.sqrt(cards.lenght));
+    board.style.gridTemplateColumns = `repeat(${cols}, 80px)`;
+
+    drawBoard();
 
 }
 
