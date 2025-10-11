@@ -41,3 +41,14 @@ h1 {
     font-size: 2em;
     cursor: pointer;
 }
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #DAA520;
+}
+
+.hiden {
+    background-color: #A0522D;
+    color: transparent;
+}
+
