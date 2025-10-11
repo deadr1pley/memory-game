@@ -1,6 +1,7 @@
 // Reference to board and score
 const board = document.getElementById("board");
 const scoreDisplay = document.getElementById("score");
+const messageDisplay = document.getElementById("message");
 
 // emoji list for cards
 const emojis = ["🎃","🎈","✨","🎁","🎀","🎭"];
@@ -66,7 +67,9 @@ function checkMatch() {
     // all cards found
     if (matched.length === cards.length) {
         setTimeout(() => {
-            alert(`🎊 You won in ${attempts} attempts!`);
+        messageDisplay.textContent = `🎊 You won in ${attempts} attempts!`;
+        messageDisplay.style.color = "#8B0000";
+        messageDisplay.style.fontWeight = "bold";
         }, 200);
     }
 }
