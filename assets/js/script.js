@@ -78,6 +78,7 @@ function updateScore() {
     scoreDisplay.textContent = `Attempts: ${attempts}`;
 }
 
+messageDisplay.textContent = "";
 startGame();
 // function restartGame() {
 
