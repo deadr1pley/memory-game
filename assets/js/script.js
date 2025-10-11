@@ -27,7 +27,7 @@ function startGame() {
     messageDisplay.textContent = "";
 
     const symbols = useIcons ? icons : emojis;
-    cards =[...symbols, ...symbols].sort(() => Math.random() - 0.5);
+    cards = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
 
     flipped = [];
     matched = [];
@@ -72,8 +72,10 @@ function flipCard(index) {
 
 function checkMatch() {
     const [first, second] = flipped;
+    const firstCard = cards[first];
+    const secondCard = cards[second];
     
-    if (cards[first] === cards[second]) {
+    if (firstCard === secondCard) {
         matched.push(first, second);
     }
 
