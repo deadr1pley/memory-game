@@ -12,6 +12,7 @@ let matched = [];
 let attempts = 0;
 
 function startGame() {
+    messageDisplay.textContent = "";
     cards =[...emojis, ...emojis].sort(() => Math.random() - 0.5);
     flipped = [];
     matched = [];
@@ -78,7 +79,7 @@ function updateScore() {
     scoreDisplay.textContent = `Attempts: ${attempts}`;
 }
 
-messageDisplay.textContent = "";
+
 startGame();
 // function restartGame() {
 
