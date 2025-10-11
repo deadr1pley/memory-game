@@ -51,7 +51,7 @@ function drawBoard() {
             div.classList.add("hidden");
         }
 
-        div.innerHTML=symbol;
+        div.innerHTML = symbol;
         div.addEventListener("click", () => flipCard(index));
         board.appendChild(div);
     });
