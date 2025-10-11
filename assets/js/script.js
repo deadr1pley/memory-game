@@ -40,9 +40,18 @@ function drawBoard() {
     });
 }
 
-function flipCard() {
+function flipCard(index) {
+    if (flipped.includes(index) || matched.includes(index))return;
 
-}
+    flipped.push(index);
+    drawBoard();
+
+    if (flipped.length === 2) {
+        attempts++;
+        updateScore();
+        setTimeout(CheckMatch, 800);
+    }
+}    
 
 function CheckMatch() {
 
