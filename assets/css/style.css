@@ -73,6 +73,7 @@ h1 {
 }
 
 .card:hover {
+    background-color: #DAA520;
     transform: scale(1.05);
     border-color: #DAA520;
 }
