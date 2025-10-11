@@ -52,3 +52,13 @@ h1 {
     color: transparent;
 }
 
+/* font awesome icons */
+.card i {
+    color: white;
+    font-size: 2em;
+    pointer-events: none;
+}
+
+.hidden i {
+    visibility: hidden;
+}
