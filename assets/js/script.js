@@ -49,18 +49,33 @@ function flipCard(index) {
     if (flipped.length === 2) {
         attempts++;
         updateScore();
-        setTimeout(CheckMatch, 800);
+        setTimeout(checkMatch, 800);
     }
 }    
 
-function CheckMatch() {
+function checkMatch() {
+    const [first, second] = flipped;
+    
+    if (cards[first] === cards[second]) {
+        matched.push(first, second);
+    }
 
+    flipped =[];
+    drawBoard();
+
+    // all cards found
+    if (matched.length === cards.length) {
+        setTimeout(() => {
+            alert(`🎊 You won in ${attempts} attempts!`);
+        }, 200);
+    }
 }
 
 function updateScore() {
-
+    scoreDisplay.textContent = `Attempts: ${attempts}`;
 }
 
+startGame();
 // function restartGame() {
 
 // }
