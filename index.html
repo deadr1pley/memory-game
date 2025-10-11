@@ -7,15 +7,21 @@
     <script src="https://kit.fontawesome.com/80139c5fe9.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Memory</title>
+    <title>Memory Game</title>
 </head>
 <body>
     <h1>Memory</h1>
     <p id="score">Attempts: 0</p>
     <p id="message"></p>
+
+    <!-- control buttons -->
+    <div class="controls">
     <button onclick="startGame()">New Game</button>
-    <button onclick="useFontAwesome()">Use for Font Awesome</button>
+    <button onclick="useFontAwesome()">Use Font Awesome</button>
     <button onclick="useEmojis()">Use Emojis</button>
+    </div>
+
+    <!-- game board -->
     <div id="board"></div>
 
     <script src="assets/js/script.js"></script>
