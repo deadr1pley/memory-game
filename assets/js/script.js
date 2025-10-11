@@ -4,7 +4,19 @@ const scoreDisplay = document.getElementById("score");
 const messageDisplay = document.getElementById("message");
 
 // emoji list for cards
-const emojis = ["🎃","🎈","✨","🎁","🎀","🎭"];
+const emojis = ["👻","🥂","✨","🎁","🎟️","🎭"];
+
+// Font Awesome icons list
+const icons = [
+    '<i class="fa-solid fa-ghost"></i>',
+    '<i class="fa-solid fa-champagne-glasses"></i>',
+    '<i class="fa-solid fa-star"></i>',
+    '<i class="fa-solid fa-gift"></i>',
+    '<i class="fa-solid fa-ticket"></i>',
+    '<i class="fa-solid fa-masks-theater"></i>'
+];
+
+let useIcons = false;
 
 let cards = [];
 let flipped = [];
@@ -13,7 +25,10 @@ let attempts = 0;
 
 function startGame() {
     messageDisplay.textContent = "";
-    cards =[...emojis, ...emojis].sort(() => Math.random() - 0.5);
+
+    const symbols = useIcons ? icons : emojis;
+    cards =[...symbols, ...symbols].sort(() => Math.random() - 0.5);
+
     flipped = [];
     matched = [];
     attempts = 0;
@@ -36,7 +51,7 @@ function drawBoard() {
             div.classList.add("hidden");
         }
 
-        div.textContent = symbol;
+        div.innerHTML=symbol;
         div.addEventListener("click", () => flipCard(index));
         board.appendChild(div);
     });
@@ -79,6 +94,15 @@ function updateScore() {
     scoreDisplay.textContent = `Attempts: ${attempts}`;
 }
 
+function useFontAwesome() {
+    useIcons = true;
+    startGame();
+}
+
+function useEmojis() {
+    useIcons = false;
+    startGame();
+}
 
 startGame();
 // function restartGame() {
