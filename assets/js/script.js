@@ -3,7 +3,7 @@ const board = document.getElementById("board");
 const scoreDisplay = document.getElementById("score");
 
 // emoji list for cards
-const emojis = ["🎃","🎈","✨","🎁"];
+const emojis = ["🎃","🎈","✨","🎁","🎀","🎭"];
 
 let cards = [];
 let flipped = [];
