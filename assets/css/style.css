@@ -78,7 +78,7 @@ h1 {
 /* Style for text on the backside of card */
 .back-text {
     color: var(--card-text);
-    font-size: 0.9em;
+    font-size: 0.5em;
     user-select: none;
     justify-content: center;
     display: flex;
