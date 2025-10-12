@@ -46,12 +46,15 @@ function drawBoard() {
     cards.forEach((symbol, index) => {
         const div = document.createElement("div");
         div.classList.add("card");
-
+// hidden car
         if(!flipped.includes(index) && !matched.includes(index)) {
             div.classList.add("hidden");
+            div.innerHTML = `<span class="back-text">MSE Memory</span>`; // text on the backside of card
+        } else {
+            //  Show emojis or Font Awesome icons when flipped
+            div.innerHTML = symbol;
         }
 
-        div.innerHTML = symbol;
         div.addEventListener("click", () => flipCard(index));
         board.appendChild(div);
     });

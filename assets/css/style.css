@@ -74,6 +74,14 @@ h1 {
     margin: 20px auto;
 }
 
+/* Style for text on the backside of card */
+.back-text {
+    color: var(--card-text);
+    font-size: 0,9em;
+    user-select: none;
+    justify-content: center;
+}
+
 /* card style */
 .card {
     width: 80px;
