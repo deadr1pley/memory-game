@@ -38,6 +38,8 @@ h1 {
     margin-top: 10px;
     margin-bottom: 0px;
     color: var(--text);
+    font-size: clamp(2em, 4vw, 3em);
+    font-weight: bold;
 }
 
 /* score display */
