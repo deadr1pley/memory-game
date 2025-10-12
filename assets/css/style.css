@@ -56,7 +56,7 @@ h1 {
 
 .controls button:hover {
     background-color: var(--card-hover);
-    color: var(var(--text));
+    color: var(--text);
     transform: scale(1.05);
 }
 
@@ -68,24 +68,30 @@ h1 {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(4, 80px);
-    gap: 10px;
+    grid-template-columns: repeat(4, 100px);
+    gap: clamp(10px, 3vw, 30px);
     justify-content: center;
-    margin: 20px auto;
+    margin: 30px auto;
+    max-width: 480px;
 }
 
 /* Style for text on the backside of card */
 .back-text {
     color: var(--card-text);
-    font-size: 0,9em;
+    font-size: 0.9em;
     user-select: none;
     justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
 }
 
 /* card style */
 .card {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background-color: var(--card);
     color: var(--card-text);
     border: 2px solid var(--card-border);
@@ -93,7 +99,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.8em;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
