@@ -1,6 +1,19 @@
+/* color variables */
+
+:root {
+   --background: #FFE4C4;  /* bisque */
+   --card: #B08D57;
+   --card-border: #8B6B3F;
+   --card-text: #FFF8E7;
+   --text: #3E2C1C;
+   --hidden-card: #C49A6C;
+   --card-hover: #DAA520;
+   --hidden-font: #fff;
+}
+
 body {
-    background-color: bisque;
-    color: black;
+    background-color: var(--background);
+    color: var(--text);
     text-align: center;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,12 +23,14 @@ body {
 /*  Headline styling */
 h1 {
     margin-top: 20px;
+    color: var(--text);
 }
 
 /* score display */
 #score {
     margin: 10px 0;
     font-weight: bold;
+    color: var(--text);
 }
 
 /* control buttons */
@@ -28,19 +43,20 @@ h1 {
 }
 
 .controls button {
-    background-color: #8b0000;
-    color: white;
-    border: none;
+    background-color: var(--card);
+    color: var(--card-text);
+    border: 2px solid var(--card-border);
     border-radius: 8px;
     padding: 10px 16px;
     font-size: 1em;
     cursor: pointer;
     transition: all 0,2s ease;
+    font-weight: bold;
 }
 
 .controls button:hover {
-    background-color: #DAA520;
-    color: black;
+    background-color: var(--card-hover);
+    color: var(var(--text));
     transform: scale(1.05);
 }
 
@@ -62,30 +78,33 @@ h1 {
 .card {
     width: 80px;
     height: 80px;
-    background-color: black;
-    border: 2px solid #8b0000;
+    background-color: var(--card);
+    color: var(--card-text);
+    border: 2px solid var(--card-border);
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .card:hover {
-    background-color: #DAA520;
+    background-color: var(--card-hover);
+    border-color: var(--card-hover);
     transform: scale(1.05);
-    border-color: #DAA520;
 }
 
 .hidden {
-    background-color: #A0522D;
+    background-color: var(--hidden-card);
     color: transparent;
 }
 
 /* font awesome icons */
 .card i {
-    color: white;
+    color: var(--hidden-font);
     font-size: 2em;
     pointer-events: none;
 }
