@@ -18,17 +18,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*  center all content vertically and horizantally */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
 }
 
 /*  Headline styling */
 h1 {
-    margin-top: 20px;
+    margin-top: 10px;
     color: var(--text);
 }
 
 /* score display */
 #score {
-    margin: 10px 0;
+    margin: 5px 0;
     font-weight: bold;
     color: var(--text);
 }
@@ -40,6 +53,7 @@ h1 {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .controls button {
@@ -50,7 +64,7 @@ h1 {
     padding: 10px 16px;
     font-size: 1em;
     cursor: pointer;
-    transition: all 0,2s ease;
+    transition: all 0.2s ease;
     font-weight: bold;
 }
 
@@ -68,8 +82,8 @@ h1 {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    gap: clamp(10px, 3vw, 30px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: clamp(10px, 2vw, 25px);
     justify-content: center;
     margin: 30px auto;
     max-width: 480px;
