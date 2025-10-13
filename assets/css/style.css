@@ -147,7 +147,7 @@ h1 {
     visibility: hidden;
 }
 
-/* ----- 1. Mobile (<480px) -----  */
+/* ----- 1. Mobile (≤480px) -----  */
 @media (max-width 480px) {
     
     h1 {
@@ -174,5 +174,32 @@ h1 {
     #score {
         font-size: 0.9em;
     }
+}
 
+/*  ----- 2. Tablet (≤768px*) ----- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4em;
+    }
+
+    #board {
+        grid-template-columns: repeat(auto-fit, minimax(85px, 1fr));
+        gap: 15px;
+        max-width: 400px;
+    }
+
+    .card {
+        width: 85px;
+        height: 85px;
+        font-size: 1.6em;
+    }
+
+    .controls {
+        gap: 12px;
+    }
+
+    .controls button {
+        font-size: 1em;
+        padding: 9px 14 px;
+    }
 }
