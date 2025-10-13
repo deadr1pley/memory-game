@@ -10,7 +10,7 @@
    --card-hover: #DAA520;
    --hidden-font: #fff;
 }
-
+/* ----- Basstyling ----- */
 body {
     background-color: var(--background);
     color: var(--text);
@@ -24,7 +24,7 @@ body {
     min-height: 100vh;
 }
 
-/*  center all content vertically and horizantally */
+/*  center all content vertically and horizontally */
 .container {
     display: flex;
     flex-direction: column;
@@ -44,8 +44,7 @@ h1 {
 
 /* score display */
 #score {
-    margin: 5px 0;
-    margin-bottom: 20px;
+    margin: 5px 0 20px 0;
     font-weight: bold;
     color: var(--text);
 }
@@ -78,7 +77,7 @@ h1 {
     transform: scale(1.05);
 }
 
-.controlsbutton:active {
+.controls button:active {
     transform: scale(0.98);
 }
 
@@ -148,7 +147,7 @@ h1 {
 }
 
 /* ----- 1. Mobile (≤480px) -----  */
-@media (max-width 480px) {
+@media (max-width: 480px) {
     
     h1 {
         font-size: 2em;
@@ -163,7 +162,7 @@ h1 {
     .card {
         width: 70px;
         height: 70px;
-        font-size: 1,4em;
+        font-size: 1.4em;
     }
 
     .controls button {
@@ -183,7 +182,7 @@ h1 {
     }
 
     #board {
-        grid-template-columns: repeat(auto-fit, minimax(85px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
         gap: 15px;
         max-width: 400px;
     }
@@ -200,7 +199,7 @@ h1 {
 
     .controls button {
         font-size: 1em;
-        padding: 9px 14 px;
+        padding: 9px 14px;
     }
 }
 
