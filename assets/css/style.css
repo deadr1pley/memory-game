@@ -146,3 +146,33 @@ h1 {
 .hidden i {
     visibility: hidden;
 }
+
+/* ----- 1. Mobile (<480px) -----  */
+@media (max-width 480px) {
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    #board {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 12px;
+        max-width: 320px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 1,4em;
+    }
+
+    .controls button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    #score {
+        font-size: 0.9em;
+    }
+
+}
