@@ -203,3 +203,16 @@ h1 {
         padding: 9px 14 px;
     }
 }
+
+/*  ----- 3. Smaller laptops (≤1024px) ----- */
+@media (max-width: 1024px) {
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    #board {
+        max-width: 460px;
+        gap: 20px;
+    }
+}
