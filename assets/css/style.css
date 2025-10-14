@@ -22,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 /*  center all content vertically and horizontally */
@@ -31,6 +32,8 @@ body {
     align-items: center;
     width: 100%;
     max-width: 600px;
+    flex: 1;
+    margin: 0 auto;
 }
 
 /*  Headline styling */
