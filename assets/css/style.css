@@ -208,6 +208,22 @@ h1 {
         padding: 9px 14px;
     }
 }
+/* ----- 2.5 Large Tablets (769px-900px) ----- */
+@media (min-width: 769px) and (max-width: 900px) {
+    #board {
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+        max-width: 480px;
+        gap: 18px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 1.6em;
+    }
+}
 
 /*  ----- 3. Smaller laptops (≤1024px) ----- */
 @media (max-width: 1024px) {
@@ -217,9 +233,16 @@ h1 {
     }
 
     #board {
-        max-width: 460px;
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+        max-width: 500px;
+        gap: 22px;
         padding: 0 15px;
         box-sizing: border-box;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 1.6em;
     }
 }
