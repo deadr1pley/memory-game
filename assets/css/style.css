@@ -90,6 +90,8 @@ h1 {
     justify-content: center;
     margin: 30px auto;
     max-width: 480px;
+    padding: 0 12px;
+    box-sizing: border-box;
 }
 
 /* Style for text on the backside of card */
@@ -157,6 +159,8 @@ h1 {
         grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
         gap: 12px;
         max-width: 320px;
+        padding: 0 8px;
+        box-sizing: border-box;
     }
 
     .card {
@@ -185,6 +189,8 @@ h1 {
         grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
         gap: 15px;
         max-width: 400px;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
 
     .card {
@@ -213,5 +219,7 @@ h1 {
     #board {
         max-width: 460px;
         gap: 20px;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 }
