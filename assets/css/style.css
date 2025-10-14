@@ -9,7 +9,15 @@
    --hidden-card: #C49A6C;
    --card-hover: #DAA520;
    --hidden-font: #fff;
+   --cell: 100px; /* mobilsize */
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /* ----- Basstyling ----- */
 body {
     background-color: var(--background);
@@ -24,6 +32,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+
 
 /*  center all content vertically and horizontally */
 .container {
@@ -55,11 +64,13 @@ h1 {
 /* control buttons */
 .controls {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     margin: 25px auto;
     max-width: 480px;
+    align-items: center;
 }
 
 .controls button {
@@ -67,11 +78,12 @@ h1 {
     color: var(--card-text);
     border: 2px solid var(--card-border);
     border-radius: 8px;
-    padding: 10px 16px;
+    padding: 10px 10px;
     font-size: 1em;
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: bold;
+    width: 12em;
 }
 
 .controls button:hover {
@@ -88,13 +100,12 @@ h1 {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, var(--cell));
+    grid-auto-rows: var(--cell);
     gap: clamp(20px, 4vw, 40px);
     justify-content: center;
     margin: 30px auto;
     max-width: 480px;
-    padding: 0 12px;
-    box-sizing: border-box;
 }
 
 /* Style for text on the backside of card */
@@ -113,8 +124,8 @@ h1 {
 
 /* card style */
 .card {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     background-color: var(--card);
     color: var(--card-text);
     border: 2px solid var(--card-border);
@@ -151,24 +162,57 @@ h1 {
     visibility: hidden;
 }
 
+/* ----- Footer Styling ----- */
+footer {
+    background-color: var(--card-border);
+    color: var(--card-text);
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin-top: auto;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+}
+
+footer h3 {
+    color: var(--card-hover);
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+footer i {
+    color: var(--card-text);
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+footer i:hover {
+    transform: scale(1.2);
+    color: var(--card-hover);
+}
+
 /* ----- 1. Mobile (≤480px) -----  */
 @media (max-width: 480px) {
+    :root { --cell: 85px; }
     
     h1 {
         font-size: 2em;
     }
 
     #board {
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
         gap: 12px;
         max-width: 320px;
         padding: 0 8px;
-        box-sizing: border-box;
+        margin-bottom: 100px; /* Fix so the footer doesn't overlap the cards on small screens*/
     }
 
     .card {
-        width: 70px;
-        height: 70px;
         font-size: 1.4em;
     }
 
@@ -182,24 +226,22 @@ h1 {
     }
 }
 
-/*  ----- 2. Tablet (≤768px*) ----- */
-@media (max-width: 768px) {
+/*  ----- 2. Tablet (≤769px*) ----- */
+@media (min-width: 769px) {
+    :root { --cell: 100px; }
+    
     h1 {
         font-size: 2.4em;
     }
 
     #board {
-        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-        gap: 15px;
-        max-width: 400px;
-        padding: 0 10px;
-        box-sizing: border-box;
+        gap: 18px;
+        max-width: 480px;
+        padding: 0 12px;
     }
 
     .card {
-        width: 85px;
-        height: 85px;
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
 
     .controls {
@@ -211,41 +253,21 @@ h1 {
         padding: 9px 14px;
     }
 }
-/* ----- 2.5 Large Tablets (769px-900px) ----- */
-@media (min-width: 769px) and (max-width: 900px) {
-    #board {
-        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-        max-width: 480px;
-        gap: 18px;
-        padding: 0 12px;
-        box-sizing: border-box;
-    }
-
-    .card {
-        width: 90px;
-        height: 90px;
-        font-size: 1.6em;
-    }
-}
-
-/*  ----- 3. Smaller laptops (≤1024px) ----- */
-@media (max-width: 1024px) {
+ /* ----- 3. Smaller laptops (1024px) ----- */
+@media (min-width: 1024px) {
+    :root { --cell: 110px; } 
 
     h1 {
         font-size: 2.6em;
     }
 
     #board {
-        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-        max-width: 500px;
+        max-width: 480px;
         gap: 22px;
         padding: 0 15px;
-        box-sizing: border-box;
     }
 
     .card {
-        width: 90px;
-        height: 90px;
         font-size: 1.6em;
     }
 }

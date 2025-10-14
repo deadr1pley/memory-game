@@ -34,8 +34,6 @@ function startGame() {
     attempts = 0;
     updateScore();
 
-    let cols =Math.ceil(Math.sqrt(cards.length));
-    board.style.gridTemplateColumns = `repeat(${cols}, 80px)`;
 
     drawBoard();
 
