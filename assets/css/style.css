@@ -210,7 +210,7 @@ footer i:hover {
         gap: 12px;
         max-width: 320px;
         padding: 0 8px;
-        margin-bottom: 100px; /* Fix so the footer doesn't overlap the cards on small screens*/
+        margin-bottom: 120px; /* Fix so the footer doesn't overlap the cards on small screens*/
     }
 
     .card {
