@@ -195,6 +195,7 @@ footer i {
 footer i:hover {
     transform: scale(1.2);
     color: var(--card-hover);
+    text-shadow: 0 0 6px rgba(218, 165,32, 0.6); /* subtle gold glow*/
 }
 
 /* ----- 1. Mobile (≤480px) -----  */
