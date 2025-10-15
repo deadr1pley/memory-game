@@ -1,3 +1,6 @@
+// All JavaScript written by Mathias Sohl Emilsson
+// Font Awesome icons sourced from https://fontawesome.com
+
 // Reference to board and score
 const board = document.getElementById("board");
 const scoreDisplay = document.getElementById("score");
