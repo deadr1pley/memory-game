@@ -109,5 +109,9 @@ function useEmojis() {
     useIcons = false;
     startGame();
 }
+// attach button events after DOM is ready
+document.getElementById("btn-new").addEventListener("click", startGame);
+document.getElementById("btn-fa").addEventListener("click", useFontAwesome);
+document.getElementById("btn-emoji").addEventListener("click", useEmojis);
 
 startGame();
