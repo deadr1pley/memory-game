@@ -47,7 +47,7 @@ function drawBoard() {
     cards.forEach((symbol, index) => {
         const div = document.createElement("div");
         div.classList.add("card");
-// hidden car
+// hidden card
         if(!flipped.includes(index) && !matched.includes(index)) {
             div.classList.add("hidden");
             div.innerHTML = `<span class="back-text">MSE Memory</span>`; // text on the backside of card
@@ -62,7 +62,11 @@ function drawBoard() {
 }
 
 function flipCard(index) {
+    // don´t allow clicking matched or same card again
     if (flipped.includes(index) || matched.includes(index))return;
+
+    // 👇 stop third click while we are checking two cards
+    if (flipped.length === 2) return;
 
     flipped.push(index);
     drawBoard();
@@ -114,4 +118,5 @@ document.getElementById("btn-new").addEventListener("click", startGame);
 document.getElementById("btn-fa").addEventListener("click", useFontAwesome);
 document.getElementById("btn-emoji").addEventListener("click", useEmojis);
 
+//start first game
 startGame();
