@@ -111,14 +111,3 @@ function useEmojis() {
 }
 
 startGame();
-// function restartGame() {
-
-// }
-
-// function setDifficulty() {
-
-// }
-
-// function chooseTheme() {
-
-// }
